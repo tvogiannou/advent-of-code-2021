@@ -127,6 +127,7 @@
     <ClCompile Include="..\..\cpp\day2.cpp" />
     <ClCompile Include="..\..\cpp\day3.cpp" />
     <ClCompile Include="..\..\cpp\day4.cpp" />
+    <ClCompile Include="..\..\cpp\day5.cpp" />
     <ClCompile Include="..\..\cpp\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
