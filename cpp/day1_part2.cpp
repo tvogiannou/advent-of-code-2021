@@ -1,4 +1,3 @@
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -27,16 +26,16 @@ struct Queue3
 };
 
 
-int main()
+int32_t day1_part2(const char* input_path)
 {
-    const char* INPUT_PATH = "D:/AoC/puzzles/inputs/day1_input.txt";
+    //const char* INPUT_PATH = "D:/AoC/puzzles/inputs/day1_input.txt";
 
     Queue3 q = { { ~0x0u, ~0x0u, ~0x0u }, 0u };
 
     uint32_t count = 0;
     std::string line;
 
-    std::ifstream input_file(INPUT_PATH);
+    std::ifstream input_file(input_path);
     if (input_file.is_open())
     {
         std::getline(input_file, line); q.push_front(to_uint32(line));
@@ -55,7 +54,5 @@ int main()
         input_file.close();
     }
 
-    std::cout << count << '\n';
-
-    return 0;
+    return count;
 }

@@ -1,18 +1,15 @@
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
 
 
-int main()
+int32_t day2_part2(const char* input_path)
 {
-    const char* INPUT_PATH = "D:/AoC/puzzles/inputs/day2_input.txt";
-
     uint32_t count = 0;
     std::string line;
     int32_t hpos=0, depth=0, aim=0;
 
-    std::ifstream input_file(INPUT_PATH);
+    std::ifstream input_file(input_path);
     if (input_file.is_open())
     {
         while (std::getline(input_file, line))
@@ -20,9 +17,7 @@ int main()
             std::istringstream iss(line);
             std::string movement;
             int32_t scale;
-
             iss >> movement >> scale;
-            //std::cout << movement << " " << scale << "\n";
 
             if (movement.compare("forward") == 0)
             {
@@ -35,8 +30,5 @@ int main()
         input_file.close();
     }
 
-    std::cout << hpos * depth << '\n';
-
-
-    return EXIT_SUCCESS;
+    return hpos * depth;
 }

@@ -1,19 +1,17 @@
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
 #include <bitset>
 
 
-int main()
+int32_t day3_part1(const char* input_path)
 {
-    const char* INPUT_PATH = "D:/AoC/puzzles/inputs/test.txt";
     const int32_t N = 12;
 
     int32_t counts[N] = {};
     std::string line;
 
-    std::ifstream input_file(INPUT_PATH);
+    std::ifstream input_file(input_path);
     if (input_file.is_open())
     {
         while (std::getline(input_file, line))
@@ -22,7 +20,6 @@ int main()
             std::bitset<N> temp;
             iss >> temp;
             int32_t code = (int32_t)temp.to_ulong();
-            //std::cout << code << "\n";
 
             for (int32_t i = 0; i < N; ++i)
             {
@@ -43,8 +40,6 @@ int main()
     }
 
     int32_t epsilon = (~0u >> (32 - N)) & (~gamma);
-    std::cout << gamma * epsilon << '\n';
 
-
-    return EXIT_SUCCESS;
+    return gamma * epsilon;
 }

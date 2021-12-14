@@ -1,4 +1,3 @@
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -25,16 +24,15 @@ int32_t GetOnesDifferenceCount(const std::vector<int32_t>& codes,
 }
 
 
-int main()
+int32_t day3_part2(const char* input_path)
 {
-    const char* INPUT_PATH = "D:/AoC/puzzles/inputs/day3_input.txt";
     const int32_t N = 12;
 
     std::string line;
     std::vector<int32_t> codes;
     codes.reserve(1024);
 
-    std::ifstream input_file(INPUT_PATH);
+    std::ifstream input_file(input_path);
     if (input_file.is_open())
     {
         while (std::getline(input_file, line))
@@ -110,7 +108,5 @@ int main()
     assert(indices.size() == 1);
     int32_t co2 = codes[indices.front()];
 
-    std::cout << oxygen * co2 << "\n";
-
-    return EXIT_SUCCESS;
+    return oxygen * co2;
 }

@@ -1,17 +1,14 @@
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
 
 
-int main()
+int32_t day1_part1(const char* input_path)
 {
-    const char* INPUT_PATH = "D:/AoC/puzzles/inputs/day1_input.txt";
-
     uint32_t prev = ~0x0u;
     uint32_t count = 0;
     std::string line;
-    std::ifstream input_file(INPUT_PATH);
+    std::ifstream input_file(input_path);
     if (input_file.is_open())
     {
         while (std::getline(input_file, line))
@@ -27,7 +24,5 @@ int main()
         input_file.close();
     }
 
-    std::cout << count << '\n';
-
-    return 0;
+    return count;
 }
