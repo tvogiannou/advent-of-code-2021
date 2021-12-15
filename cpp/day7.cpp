@@ -32,7 +32,7 @@ int32_t day7_part1(const char* input_path)
     auto median_it = positions.begin();
     std::advance(median_it, positions.size() / 2);
     int32_t median = *median_it;
-    std::cout << median << "\n";
+    //std::cout << median << "\n";
 
     int32_t count = 0;
     for (auto it = positions.begin(); it != positions.end(); ++it)
