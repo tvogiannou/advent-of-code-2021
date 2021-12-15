@@ -13,7 +13,7 @@ using TableType = std::array<int32_t, N*N>;
 
 int32_t FindIndex(const std::vector<int32_t>& v, int32_t x)
 {
-    for (int32_t i = 0; i < (int32_t)v.size(); ++i)
+    for (int32_t i = 0; i < static_cast<int32_t>(v.size()); ++i)
         if (v[i] == x)
             return i;
 
@@ -22,7 +22,7 @@ int32_t FindIndex(const std::vector<int32_t>& v, int32_t x)
 
 int32_t FindIndex(const TableType& v, int32_t x)
 {
-    for (int32_t i = 0; i < (int32_t)v.size(); ++i)
+    for (int32_t i = 0; i < static_cast<int32_t>(v.size()); ++i)
         if (v[i] == x)
             return i;
 
@@ -48,7 +48,7 @@ bool ReadTable(std::ifstream& input_file, TableType& table)
 int32_t GetEarliestBingo(const TableType& table, const std::vector<int32_t>& numbers)
 {
     int32_t col_scores[N] = {}; // column scores as being read
-    int32_t bingo_score = numbers.size();
+    int32_t bingo_score = static_cast<int32_t>(numbers.size());
 
     // read per row
     for (int32_t i = 0; i < N; ++i)
@@ -89,7 +89,7 @@ int32_t ComputeTableScore(const TableType& table,
         if (FindIndex(table, numbers[i]) >= 0)
             sum -= (int64_t)numbers[i];
 
-    return (int32_t)sum * numbers[max_index];
+    return static_cast<int32_t>(sum) * numbers[max_index];
 }
 
 
@@ -117,7 +117,7 @@ int32_t day4_part1(const char* input_path)
                 iss >> comma;
             }
         }
-        best_table_bingo = (int32_t)numbers.size();
+        best_table_bingo = static_cast<int32_t>(numbers.size());
 
         // get a score for each array and keep track of the lower score
         // score = earliest that array will finish the bingo

@@ -70,7 +70,7 @@ int32_t day5_part1(const char* input_path)
     int32_t count = 0;
     for (auto it = passed_points.begin(); it != passed_points.end(); )
     {
-        int32_t _segment_count = passed_points.count(*it);
+        int32_t _segment_count = static_cast<int32_t>(passed_points.count(*it));
         if (_segment_count > 1)
             ++count;
         
@@ -128,7 +128,7 @@ int32_t day5_part2(const char* input_path)
     int32_t count = 0;
     for (auto it = passed_points.begin(); it != passed_points.end(); )
     {
-        int32_t _segment_count = passed_points.count(*it);
+        int32_t _segment_count = static_cast<int32_t>(passed_points.count(*it));
         if (_segment_count > 1)
             ++count;
 

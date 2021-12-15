@@ -21,7 +21,7 @@ int32_t day3_part1(const char* input_path)
             std::istringstream iss(line);
             std::bitset<N> temp;
             iss >> temp;
-            int32_t code = (int32_t)temp.to_ulong();
+            int32_t code = static_cast<int32_t>(temp.to_ulong());
 
             for (int32_t i = 0; i < N; ++i)
             {
@@ -79,7 +79,7 @@ int32_t day3_part2(const char* input_path)
             std::istringstream iss(line);
             std::bitset<N> temp;
             iss >> temp;
-            int32_t code = (int32_t)temp.to_ulong();
+            int32_t code = static_cast<int32_t>(temp.to_ulong());
             codes.push_back(code);
         }
         input_file.close();
@@ -88,7 +88,7 @@ int32_t day3_part2(const char* input_path)
     std::vector<int32_t> indices;
     indices.resize(codes.size());
     for (size_t i = 0; i < indices.size(); ++i)
-        indices[i] = i;
+        indices[i] = static_cast<int32_t>(i);
 
     // most common value criterion
     int32_t bit = N - 1;
@@ -120,7 +120,7 @@ int32_t day3_part2(const char* input_path)
     // least common value criterion
     indices.resize(codes.size());
     for (size_t i = 0; i < indices.size(); ++i)
-        indices[i] = i;
+        indices[i] = static_cast<int32_t>(i);
     bit = N - 1;
     while (bit >= 0)
     {

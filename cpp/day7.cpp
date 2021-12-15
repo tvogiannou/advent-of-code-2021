@@ -80,9 +80,12 @@ int32_t day7_part2(const char* input_path)
     float optimalf = (float)sum / (float)positions.size();
     //std::cout << optimalf << "\n";
 
-    int32_t cost_floor = ComputeFuelCost(positions, (int32_t)optimalf);
-    int32_t cost_ceil = ComputeFuelCost(positions, (int32_t)optimalf + 1);
-    int32_t cost = std::min(cost_floor, cost_ceil);
+    // not happy about this, should be able to figure out whether to keep floor/ceil
+    const int32_t cost_floor = 
+        ComputeFuelCost(positions, static_cast<int32_t>(optimalf));
+    const int32_t cost_ceil =
+        ComputeFuelCost(positions, static_cast<int32_t>(optimalf) + 1);
+    const int32_t cost = std::min(cost_floor, cost_ceil);
 
     return cost;
 }
