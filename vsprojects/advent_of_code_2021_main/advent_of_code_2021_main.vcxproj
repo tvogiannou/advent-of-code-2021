@@ -126,6 +126,7 @@
     <ClCompile Include="..\..\cpp\day1.cpp" />
     <ClCompile Include="..\..\cpp\day10.cpp" />
     <ClCompile Include="..\..\cpp\day11.cpp" />
+    <ClCompile Include="..\..\cpp\day12.cpp" />
     <ClCompile Include="..\..\cpp\day2.cpp" />
     <ClCompile Include="..\..\cpp\day3.cpp" />
     <ClCompile Include="..\..\cpp\day4.cpp" />
