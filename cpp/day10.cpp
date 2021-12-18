@@ -165,10 +165,7 @@ int64_t day10_part2(const char* input_path)
             }
 
             if (!corrupted)
-            {
                 scores.emplace_back(ComputeCompletionScore(chunks));
-                std::cout << scores.back() << "\n";
-            }
         }
         input_file.close();
     }
