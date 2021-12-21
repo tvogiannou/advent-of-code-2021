@@ -32,6 +32,8 @@ int32_t day13_part1(const char* input_path);
 int32_t day13_part2(const char* input_path);
 uint64_t day14_part1(const char* input_path);
 uint64_t day14_part2(const char* input_path);
+int32_t day15_part1(const char* input_path);
+int32_t day15_part2(const char* input_path);
 
 // util to just print any return type
 template<typename T>
@@ -70,7 +72,9 @@ int main()
 //     PrintResult("D13 P1", day13_part1("D:/AoC/puzzles/inputs/day13_input.txt"));
 //     PrintResult("D13 P2", day13_part2("D:/AoC/puzzles/inputs/day13_input.txt"));
 //     PrintResult("D14 P1", day14_part1("D:/AoC/puzzles/inputs/day14_input.txt"));
-    PrintResult("D14 P2", day14_part2("D:/AoC/puzzles/inputs/day14_input.txt"));
+//     PrintResult("D14 P2", day14_part2("D:/AoC/puzzles/inputs/day14_input.txt"));
+//    PrintResult("D15 P1", day15_part1("D:/AoC/puzzles/inputs/day15_input.txt"));
+    PrintResult("D15 P2", day15_part2("D:/AoC/puzzles/inputs/day15_input.txt"));
 
     return EXIT_SUCCESS;
 }
